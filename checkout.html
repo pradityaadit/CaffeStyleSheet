@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Form</title>
+    <link rel="stylesheet" href="co.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="/gambar/logofix.png" />
+    <style>
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Enlarge the Notes input box */
+      .notes-input {
+        width: 100%;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="#">
+          <img src="/gambar/logofix.png" alt="Logo" />
+        </a>
+        <a href="index.html" class="brand"><h1>Caffe Stylesheet</h1></a>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <form action="">
+        <div class="form">
+          <h3>CHECK OUT</h3>
+          <label for="name">Nama</label><br />
+          <div class="icon">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Masukan Nama anda..."
+              required
+            />
+            <i class="fas fa-user"></i><br />
+          </div>
+          <label for="adress">Meja No</label><br />
+          <div class="icon">
+            <input
+              type="text"
+              name="adress"
+              id="adress"
+              placeholder="Masukan No Meja..."
+              required
+            />
+            <i class="fas fa-chair"></i><br />
+          </div>
+          <label for="notes">Catatan</label><br />
+          <div class="icon">
+            <textarea
+              name="notes"
+              id="notes"
+              placeholder="Enter your notes..."
+              class="notes-input"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="form country-post">
+          <div class="country">
+            <label for="coffee-size">Gula</label><br />
+            <div class="icon">
+              <select name="coffee-size" id="coffee-size">
+                <option value="#" selected>Banyak</option>
+                <option value="#">Sedikit</option>
+                <option value="#" selected>Normal</option>
+              </select>
+              <i class="fas fa-mug-hot"></i>
+            </div>
+          </div>
+
+          <div>
+            <label for="ice-amount">Jumlah Es</label><br />
+            <div class="icon">
+              <select name="ice-amount" id="ice-amount">
+                <option value="#" selected>Banyak</option>
+                <option value="#">Sedang</option>
+                <option value="#">Sedikit</option>
+                <option value="#" selected>Hangat</option>
+              </select>
+              <i class="fas fa-ice-cream"></i>
+            </div>
+          </div>
+        </div>
+        <button id="#" value="#">Bayar !</button>
+      </form>
+
+      <div class="shopping-wrapper">
+        <div class="shopping">
+          <!-- Item template for JavaScript to populate -->
+        </div>
+        <div class="total">
+          <p>TOTAL :</p>
+          <p id="total-price">Rp 0.00</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <p>&copy; 2024 Caffe Stylesheet. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const shoppingContainer = document.querySelector(".shopping");
+        const totalPriceElement = document.getElementById("total-price");
+
+        function renderCartItems() {
+          shoppingContainer.innerHTML = "";
+          let total = 0;
+          cart.forEach((item, index) => {
+            const itemElement = document.createElement("div");
+            itemElement.classList.add("content");
+            itemElement.innerHTML = `
+              <div class="img">
+                <img src="${item.image}" alt="${item.name}" />
+              </div>
+              <div class="price-tag">
+                <h4 style="color: #eaeaea;">${item.name}</h4>
+                <p class="price">
+                  <span style="color: #eaeaea; font-weight: 600;">Rp ${item.price}</span>
+                </p>
+                <div class="amount">
+                  <div><i class="fas fa-minus" data-id="${item.id}" data-index="${index}"></i></div>
+                  <div><p style="color: #eaeaea;">${item.quantity}</p></div>
+                  <div><i class="fas fa-plus" data-id="${item.id}" data-index="${index}"></i></div>
+                </div>
+              </div>
+            `;
+            shoppingContainer.appendChild(itemElement);
+            total += item.price * item.quantity;
+          });
+          totalPriceElement.textContent = `Rp ${total}`;
+        }
+
+        // Mengambil data dari localStorage dan me-render kembali saat halaman dimuat
+        console.log(cart);
+        renderCartItems();
+
+        // Fungsi untuk mengupdate keranjang di localStorage dan me-render kembali
+        function updateCartInLocalStorage() {
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          renderCartItems();
+        }
+
+        // Event listener untuk mengurangi atau menambah jumlah item di keranjang
+        shoppingContainer.addEventListener("click", function (e) {
+          if (e.target.classList.contains("fa-minus")) {
+            const index = e.target.dataset.index;
+            const item = cart[index];
+            if (item.quantity > 1) {
+              item.quantity--;
+            } else {
+              cart.splice(index, 1);
+            }
+            updateCartInLocalStorage();
+          } else if (e.target.classList.contains("fa-plus")) {
+            const index = e.target.dataset.index;
+            const item = cart[index];
+            item.quantity++;
+            updateCartInLocalStorage();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

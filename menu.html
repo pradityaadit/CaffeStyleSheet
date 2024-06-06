@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Caffe</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/gambar/logofix.png" />
+    <style>
+      .menu li {
+        text-align: center;
+        margin-right: 10px;
+        padding-left: 100px;
+      }
+      .cart-count {
+        position: absolute;
+        top: 11px;
+        right: 320px;
+        background-color: #fff;
+        color: #030303;
+        border-radius: 50%;
+        padding: 5px 10px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .reset-cart-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #d3ad7f;
+        color: white;
+        border: none;
+        padding: 5px 13px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 800px) {
+        header {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .menu {
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* Menyusun menu di tengah */
+          margin-right: 10px;
+        }
+
+        .logo {
+          display: flex;
+          justify-content: center; /* Menyusun logo di tengah */
+          padding-left: 0;
+          margin-left: -20px;
+        }
+
+        .menu ul {
+          display: flex;
+          gap: 1px; /* Menyusun item menu dalam kolom */
+          align-items: center; /* Menyusun item di tengah */
+          margin: 0; /* Menghapus margin */
+          padding: 0; /* Menghapus padding */
+        }
+
+        .menu ul li {
+          margin-top: 5px;
+          margin-right: 20px;
+          padding-left: 20px;
+          margin-bottom: 10px; /* Menambah jarak bawah antar item */
+        }
+
+        .cart-count {
+          position: absolute;
+          top: 110px; /* Menyesuaikan posisi agar berada di atas ikon cart */
+          right: 301px; /* Menyelaraskan dengan ikon cart */
+          background-color: #fff;
+          color: #030303;
+          border-radius: 50%;
+          font-size: 12px;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/gambar/logofix.png" alt="" />
+        <h1><a href="index.html">Caffe Stylesheet</a></h1>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+        </ul>
+        <div class="search-cart">
+          <a href="checkout.html"
+            ><i class="fa-solid fa-cart-shopping"></i
+            ><span class="cart-count">0</span></a
+          >
+          <div class="search">
+            <a href="#"><i class="fa-solid fa-search"></i></a>
+            <input type="text" placeholder="Search..." />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="menu-kopi" id="menu">
+      <div class="menu-luar"></div>
+      <div class="menu-container">
+        <h2>Menu Kopi Dan Makanan</h2>
+        <div class="post-filter">
+          <button class="filter-item active-filter" data-filter="all">
+            Semua
+          </button>
+          <button class="filter-item" data-filter="makanan">Makanan</button>
+          <button class="filter-item" data-filter="minuman">Minuman</button>
+        </div>
+
+        <div class="row">
+          <div class="menu-item minuman">
+            <img src="/gambar/kopi.png" alt="Kopi Cappuccino" />
+            <div class="menu-info">
+              <h3>Cappuccino</h3>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p>kopi Cappuccino</p>
+              <span class="price">
+                Rp 25.000
+                <button class="order-btn">
+                  <a
+                    href="#"
+                    class="add-to-cart"
+                    data-id="1"
+                    data-name="Kopi Cappuccino"
+                    data-price="25000"
+                    data-image="/gambar/kopi.png"
+                    >Add To Cart</a
+                  >
+                </button>
+              </span>
+            </div>
+          </div>
+          <!-- More menu items... -->
+          <div class="menu-item minuman">
+            <img src="/gambar/kopi.png" alt="Kopi Espreso" />
+            <div class="menu-info">
+              <h3>Espreso</h3>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p>kopi Espreso</p>
+              <span class="price">
+                Rp 25.000
+                <button class="order-btn">
+                  <a
+                    href="#"
+                    class="add-to-cart"
+                    data-id="2"
+                    data-name="Kopi Espreso"
+                    data-price="25000"
+                    data-image="/gambar/kopi.png"
+                    >Add To Cart</a
+                  >
+                </button>
+              </span>
+            </div>
+          </div>
+          <!-- More menu items... -->
+          <div class="menu-item minuman">
+            <img src="/gambar/kopi.png" alt="Kopi Flatwhite" />
+            <div class="menu-info">
+              <h3>Kopi Flatwhite</h3>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p>kopi Flatwhite</p>
+              <span class="price">
+                Rp 25.000
+                <button class="order-btn">
+                  <a
+                    href="#"
+                    class="add-to-cart"
+                    data-id="3"
+                    data-name="Kopi Flatwhite"
+                    data-price="25000"
+                    data-image="/gambar/kopi.png"
+                    >Add To Cart</a
+                  >
+                </button>
+              </span>
+            </div>
+          </div>
+          <!-- More menu items... -->
+          <div class="menu-item minuman">
+            <img src="/gambar/kopi.png" alt="Kopi Latte" />
+            <div class="menu-info">
+              <h3>Kopi Latte</h3>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p>kopi Latte</p>
+              <span class="price">
+                Rp 25.000
+                <button class="order-btn">
+                  <a
+                    href="#"
+                    class="add-to-cart"
+                    data-id="4"
+                    data-name="Kopi Latte"
+                    data-price="25000"
+                    data-image="/gambar/kopi.png"
+                    >Add To Cart</a
+                  >
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAKANANNNNNN -->
+        <div class="row">
+          <div class="menu-item minuman">
+            <img src="/gambar/kopi.png" alt="Kopi Mocha" />
+            <div class="menu-info">
+              <h3>Kopi Mocha</h3>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p>kopi mocha</p>
+              <span class="price">
+                Rp 25.000
+                <button class="order-btn">
+                  <a
+                    href="#"
+                    class="add-to-cart"
+                    data-id="5"
+                    data-name="Kopi Mocha"
+                    data-price="25000"
+                    data-image="/gambar/kopi.png"
+                    >Add To Cart</a
+                  >
+                </button>
+              </span>
+            </div>
+          </div>
+          <!-- More menu items... -->
+          <div class="menu-item makanan">
+            <img src="/gambar/nasigoreng.png" alt="Nasi Goreng" />
+            <div class="menu-info">
+              <h3>Nasi Goreng</h3>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p>Nasi Goreng</p>
+              <span class="price">
+                Rp 28.000
+                <button class="order-btn">
+                  <a
+                    href="#"
+                    class="add-to-cart"
+                    data-id="6"
+                    data-name="Nasi Goreng"
+                    data-price="28000"
+                    data-image="/gambar/nasigoreng.png"
+                    >Add To Cart</a
+                  >
+                </button>
+              </span>
+            </div>
+          </div>
+          <!-- More menu items... -->
+          <div class="menu-item makanan">
+            <img src="/gambar/kentanggoreng.png" alt="Kentang Goreng" />
+            <div class="menu-info">
+              <h3>Kentang Goreng</h3>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p>Kentang Goreng</p>
+              <span class="price">
+                Rp 20.000
+                <button class="order-btn">
+                  <a
+                    href="#"
+                    class="add-to-cart"
+                    data-id="7"
+                    data-name="Kentang Goreng"
+                    data-price="20000"
+                    data-image="/gambar/kentanggoreng.png"
+                    >Add To Cart</a
+                  >
+                </button>
+              </span>
+            </div>
+          </div>
+          <!-- More menu items... -->
+          <div class="menu-item makanan">
+            <img src="/gambar/pasta.png" alt="Pasta" />
+            <div class="menu-info">
+              <h3>Pasta</h3>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <p>Pasta</p>
+              <span class="price">
+                Rp 23.000
+                <button class="order-btn">
+                  <a
+                    href="#"
+                    class="add-to-cart"
+                    data-id="8"
+                    data-name="Pasta"
+                    data-price="23000"
+                    data-image="/gambar/pasta.png"
+                    >Add To Cart</a
+                  >
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- More rows... -->
+      </div>
+    </section>
+
+    <button class="reset-cart-btn">Reset Cart</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".filter-item").click(function () {
+          var value = $(this).attr("data-filter");
+          if (value == "all") {
+            $(".menu-item").show("1000");
+          } else {
+            $(".menu-item")
+              .not("." + value)
+              .hide("1000");
+            $(".menu-item")
+              .filter("." + value)
+              .show("1000");
+          }
+        });
+
+        $(".filter-item").click(function () {
+          $(this)
+            .addClass("active-filter")
+            .siblings()
+            .removeClass("active-filter");
+        });
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function updateCartCount() {
+          $(".cart-count").text(cart.length);
+        }
+
+        updateCartCount();
+
+        $(".add-to-cart").click(function (e) {
+          e.preventDefault();
+          if (cart.length >= 4) {
+            alert(
+              "Batas maksimal pembelian item 4. Silahkan selesaikan pembelian terlebih dahulu."
+            );
+            return;
+          }
+          let item = {
+            id: $(this).data("id"),
+            name: $(this).data("name"),
+            price: $(this).data("price"),
+            image: $(this).data("image"), // Store image path
+            quantity: 1,
+          };
+          cart.push(item);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartCount();
+        });
+
+        $(".reset-cart-btn").click(function () {
+          cart = [];
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartCount();
+        });
+      });
+    </script>
+  </body>
+</html>
