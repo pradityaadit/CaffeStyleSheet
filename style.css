@@ -605,6 +605,7 @@ main {
   header {
     flex-direction: column;
     align-items: center;
+    backdrop-filter: blur(10px);
   }
 
   .menu {
