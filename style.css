@@ -852,9 +852,9 @@ main {
     align-items: center; /* Center align items vertically */
   }
 
-  .footer .logo img {
+  .footer .logoimg {
     margin-bottom: 20px; /* Add space below logo */
-    margin-left: 30px;
+    margin: 0 auto; /* Center align logo */
   }
 
   .footer .contact,
@@ -871,6 +871,6 @@ main {
   }
 
   .fa-brands {
-    margin-right: 0; /* Remove margin-right for social media icons */
+    margin-right: auto; /* Remove margin-right for social media icons */
   }
 }
