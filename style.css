@@ -852,9 +852,8 @@ main {
     align-items: center; /* Center align items vertically */
   }
 
-  .footer .logoimg {
-    margin-bottom: 20px; /* Add space below logo */
-    margin: 0 auto; /* Center align logo */
+  .footer-content img {
+    margin-left: 40px;
   }
 
   .footer .contact,
