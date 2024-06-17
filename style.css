@@ -6,7 +6,6 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 header {
@@ -86,6 +85,12 @@ header {
   color: #eaeaea;
 }
 
+.fa-search {
+  position: absolute;
+  right: 60px;
+  top: 10px;
+}
+
 .search input[type="text"] {
   padding: 10px;
   border-radius: 5px;
@@ -100,6 +105,10 @@ header {
 .search-cart a {
   color: #eaeaea;
   margin-left: 20px;
+}
+
+.hamburger {
+  display: none;
 }
 
 /* SECTIONNNN HOME*/
@@ -156,7 +165,7 @@ header {
 }
 
 .text-1 {
-  font-family: "Briem Hand", cursive;
+  font-family: cursive;
   margin-top: -50px;
   margin-left: -30px;
   font-size: 18px;
@@ -603,58 +612,94 @@ main {
 
 @media (max-width: 800px) {
   header {
-    flex-direction: column;
-    align-items: center;
-    backdrop-filter: blur(10px);
-  }
-
-  .menu {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Menyusun menu di tengah */
-    margin-right: 10px;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
   }
 
   .logo {
     display: flex;
-    justify-content: center; /* Menyusun logo di tengah */
-    padding-left: 0;
-    margin-left: -20px;
+    align-items: center;
+    gap: 20px;
+    color: #eaeaea;
+    cursor: pointer;
+    margin-right: 50px;
   }
 
-  .menu ul {
+  .logo a {
+    text-decoration: none;
+    color: #eaeaea;
+  }
+
+  .logo img {
+    width: 70px;
+  }
+
+  .hamburger {
     display: flex;
-    gap: 10px; /* Menyusun item menu dalam kolom */
-    align-items: center; /* Menyusun item di tengah */
-    margin: 0; /* Menghapus margin */
-    padding: 0; /* Menghapus padding */
+    align-items: center;
+    color: #eaeaea;
+    font-size: 28px;
+    margin-left: 20px;
+    gap: 30px;
+    cursor: pointer;
   }
 
-  .menu ul li {
-    margin: 0; /* Menghapus margin */
-    margin-bottom: 10px; /* Menambah jarak bawah antar item */
+  .menu {
+    display: none;
   }
 
-  .fa-cart-shopping {
+  /* Styles untuk menu aktif */
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    top: 90px; /* Sesuaikan dengan tinggi header Anda */
+    background-color: rgba(0, 0, 0, 0.9);
+    right: 0;
+    left: 0;
+    width: 100%; /* Lebar penuh */
+    max-height: calc(100vh - 50px); /* Batas maksimum tinggi menu */
+    overflow-y: auto; /* Tambahkan scrollbar jika tinggi menu melebihi batas */
+    z-index: 1;
+  }
+
+  .menu.active .search-cart {
+    display: none;
+  }
+
+  .menu.active ul {
+    display: flex;
+    flex-direction: column; /* Menampilkan pilihan menu secara vertikal */
+    gap: 10px; /* Jarak antar item menu */
+    padding: 10px; /* Padding di dalam menu aktif */
+    margin: 0; /* Menghapus margin bawaan dari ul */
+    margin-right: 270px;
+    font-size: 24px;
+  }
+
+  .menu.active li {
+    list-style: none; /* Menghilangkan bullet list */
+  }
+
+  .menu.active a {
+    text-decoration: none;
+    color: #eaeaea;
     padding: 10px;
-    margin-top: 20px;
   }
 
-  .search-cart {
-    margin-left: 40px;
+  .menu.active a:hover {
+    text-decoration: underline;
   }
 
-  .search {
-    margin-top: 20px; /* Menambah jarak atas untuk elemen pencarian */
-    width: 100%; /* Menyesuaikan lebar pencarian dengan lebar container */
-    display: flex;
-    justify-content: center; /* Menempatkan pencarian di tengah */
-  }
-
-  .search input {
-    width: 80%; /* Menentukan lebar input pencarian */
-  }
-
+  /* SECTIONNNN HOME*/
   .home {
     padding: 130px 10px;
   }
@@ -667,7 +712,7 @@ main {
 
   .text-1 h1 {
     padding: 5px;
-    font-size: 60px;
+    font-size: 75px;
   }
 
   .about {
@@ -697,11 +742,7 @@ main {
   /* SWIPPERRRRRRRRRRR */
 
   main {
-    padding: 95px 5px; /* Mengurangi padding agar lebih sesuai dengan ukuran layar kecil */
-  }
-
-  .judul-card {
-    margin-top: 90px;
+    padding: 95px 10px; /* Mengurangi padding agar lebih sesuai dengan ukuran layar kecil */
   }
 
   .card-container {
@@ -723,7 +764,7 @@ main {
 
   .btn-slider {
     position: absolute; /* Memposisikan tombol di atas konten */
-    top: 240%; /* Posisi vertikal di tengah */
+    top: 200%; /* Posisi vertikal di tengah */
     transform: translateY(
       -50%
     ); /* Menggeser posisi vertikal tombol ke tengah */
@@ -748,8 +789,11 @@ main {
     background-color: #110c0c;
   }
   .menu-container {
-    margin-top: 140px;
     padding: 20px; /* Mengurangi padding agar lebih sesuai dengan ukuran layar kecil */
+  }
+
+  .menu-home {
+    padding-top: 50px;
   }
 
   .row {
@@ -811,6 +855,7 @@ main {
 
   .footer .logo img {
     margin-bottom: 20px; /* Add space below logo */
+    margin-left: 40px;
   }
 
   .footer .contact,

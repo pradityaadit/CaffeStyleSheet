@@ -39,3 +39,17 @@ function showSlides(n) {
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Ambil elemen hamburger
+  const hamburger = document.querySelector(".hamburger");
+
+  // Ambil elemen menu yang ingin ditoggle
+  const menu = document.querySelector(".menu");
+
+  // Tambahkan event listener pada hamburger
+  hamburger.addEventListener("click", function () {
+    // Toggle class 'active' pada menu
+    menu.classList.toggle("active");
+  });
+});

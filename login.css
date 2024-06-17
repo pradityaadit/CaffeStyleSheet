@@ -1,0 +1,309 @@
+@charset "UTF-8";
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: hsl(210, 3%, 11%);
+  font-family: "Poppins", sans-serif;
+  color: hsl(244, 4%, 36%);
+}
+
+input,
+button {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*=============== LOGIN FORM ===============*/
+.login__content {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.login__img-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.login__img {
+  width: 120%;
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.login__welcome {
+  font-family: cursive;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.login__welcome span {
+  color: #d3ad7f;
+}
+
+.back {
+  position: absolute;
+  top: 240%; /* Adjust this value to move the arrow down */
+  left: -5%;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.back a {
+  display: flex;
+  align-items: center;
+  color: #d3ad7f;
+  text-decoration: none;
+}
+
+.back a:hover {
+  color: #532e1c;
+}
+
+.back .ri-door-open-line {
+  top: 10%;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.login__form {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: hsla(244, 16%, 92%, 0.6);
+  border: 2px solid hsla(244, 16%, 92%, 0.75);
+  margin: 0 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(20px);
+}
+
+.login__title {
+  color: hsl(244, 12%, 12%);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.login__description {
+  font-size: 0.813rem;
+}
+
+.login__inputs {
+  row-gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.login__label {
+  display: block;
+  color: hsl(244, 12%, 12%);
+  font-size: 0.813rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.login__input {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 6px;
+  border: 2px solid hsl(244, 4%, 36%);
+  background-color: hsla(244, 16%, 92%, 0.6);
+  color: hsl(244, 12%, 12%);
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: border 0.4s;
+}
+
+.login__input::placeholder {
+  color: hsl(244, 4%, 36%);
+}
+
+.login__input:focus,
+.login__input:valid {
+  border: 2px solid #d3ad7f;
+}
+
+.login__box {
+  position: relative;
+}
+
+.login__box .login__input {
+  padding-right: 36px;
+}
+
+.login__eye {
+  width: max-content;
+  height: max-content;
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.login__check {
+  display: flex;
+  column-gap: 0.5rem;
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.login__check-input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid hsl(244, 4%, 36%);
+  background-color: hsla(244, 16%, 92%, 0.2);
+  border-radius: 0.25rem;
+}
+
+.login__check-input:checked {
+  background: #d3ad7f;
+}
+
+.login__check-input:checked::before {
+  content: "✔";
+  display: block;
+  color: #fff;
+  font-size: 0.75rem;
+  transform: translate(1.5px, -2.5px);
+}
+
+.login__check-label {
+  font-size: 0.813rem;
+}
+
+.login__buttons {
+  display: flex;
+  column-gap: 0.75rem;
+}
+
+.login__button {
+  width: 100%;
+  padding: 14px 2rem;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #d3ad7f, #532e1c);
+  color: #fff;
+  font-size: 0.813rem;
+  font-weight: 600;
+  box-shadow: 0 6px 24px hsla(45, 83%, 66%, 0.863);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.login__button-ghost {
+  background: hsla(244, 16%, 92%, 0.6);
+  border: 2px solid #d3ad7f;
+  color: #d3ad7f;
+  box-shadow: none;
+}
+
+.login__forgot {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #532e1c;
+  text-decoration: none;
+}
+
+.login__forgot:hover {
+  text-decoration: underline;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 360px) {
+  .login__buttons {
+    flex-direction: column;
+  }
+}
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .login__form {
+    width: 450px;
+    justify-self: center;
+  }
+}
+/* For large devices */
+@media screen and (min-width: 1064px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  .login__content {
+    width: 1024px;
+    height: 600px;
+  }
+  .login__img {
+    border-radius: 3.5rem;
+    box-shadow: 0 6px 24px hsla(46, 74%, 5%, 0.863);
+  }
+  .login__form {
+    justify-self: flex-end;
+    margin-right: 4.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .login__content {
+    height: 650px;
+  }
+  .login__form {
+    row-gap: 2rem;
+    padding: 3rem;
+    border-radius: 1.25rem;
+    border: 2.5px solid hsla(244, 16%, 92%, 0.75);
+  }
+  .login__description,
+  .login__label,
+  .login__button {
+    font-size: 1rem;
+  }
+  .login__inputs {
+    row-gap: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .login__input {
+    border: 2.5px solid hsl(244, 4%, 36%);
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+  .login__input:focus,
+  .login__input:valid {
+    border: 2.5px solid #d3ad7f;
+  }
+  .login__button {
+    padding-block: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .login__button-ghost {
+    border: 2.5px solid #d3ad7f;
+  }
+}
