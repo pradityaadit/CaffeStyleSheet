@@ -763,7 +763,7 @@ main {
 
   .btn-slider {
     position: absolute; /* Memposisikan tombol di atas konten */
-    top: 210%; /* Posisi vertikal di tengah */
+    top: auto; /* Posisi vertikal di tengah */
     transform: translateY(
       -50%
     ); /* Menggeser posisi vertikal tombol ke tengah */
