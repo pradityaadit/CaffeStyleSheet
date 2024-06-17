@@ -850,17 +850,14 @@ main {
   .footer-content {
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center align items vertically */
-  }
-
-  .footer-content img {
-    margin-left: 40px;
+    margin: 0;
   }
 
   .footer .contact,
   .footer .information,
   .footer .opening-hours {
     text-align: center; /* Ensure text is centered on small screens */
-    margin-right: 0; /* Remove margin-right */
+    margin: auto;
     max-width: none; /* Remove max-width constraint */
   }
 
