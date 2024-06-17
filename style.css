@@ -763,7 +763,7 @@ main {
 
   .btn-slider {
     position: absolute; /* Memposisikan tombol di atas konten */
-    top: 185%; /* Posisi vertikal di tengah */
+    top: 200%; /* Posisi vertikal di tengah */
     transform: translateY(
       -50%
     ); /* Menggeser posisi vertikal tombol ke tengah */
@@ -854,7 +854,7 @@ main {
 
   .footer .logo img {
     margin-bottom: 20px; /* Add space below logo */
-    margin-left: 40px;
+    margin-left: 30px;
   }
 
   .footer .contact,
