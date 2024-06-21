@@ -316,6 +316,7 @@ img {
   }
 
   .back {
+    margin-top: 13px;
     bottom: auto;
     right: auto;
   }
