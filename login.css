@@ -72,9 +72,9 @@ img {
 
 .back {
   position: absolute;
-  top: 240%; /* Adjust this value to move the arrow down */
-  left: -5%;
-
+  right: 50px;
+  bottom: 45px;
+  color: white;
   font-size: 1.3rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -312,12 +312,13 @@ img {
   .login__welcome {
     font-size: 1rem;
     top: 70px;
+    text-align: center;
   }
 
   .back {
-    top: 545px;
+    bottom: 54px;
     right: auto;
-    left: 10%;
+    left: 25%;
     transform: translateX(-50%);
   }
   .login__img {
