@@ -316,10 +316,8 @@ img {
   }
 
   .back {
-    bottom: 54px;
+    bottom: auto;
     right: auto;
-    left: 25%;
-    transform: translateX(-50%);
   }
   .login__img {
     display: none;
